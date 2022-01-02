@@ -1,0 +1,87 @@
+﻿name,title,department,course,instructor,email,field,direction,homepage,imageURL
+安文星,副教授,微电子学院,《研究生科技论文写作》,硕士生导师,anwenxing@126.com,天线理论与技术,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgka/201704/t20170425_294158.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgka/201704/W020180320365578804629.jpg
+陈为刚,副教授,微电子学院,《信号与系统》，《通信原理》，《通信与信息处理算法实现》,硕士生导师,chenwg@tju.edu.cn,"（1）信息理论与编码理论，近期重点研究未来无线通信、颠覆性存储系统的编码与系统设计
+
+（2）数字信号处理与通信的专用芯片，重点关注生物信息处理专用芯片（ASIC）
+
+（3）无线通信，近期重点研究水下通信与测距融合的算法、海洋物联网",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkc/201901/t20190129_311615.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkc/201901/W020190129531642472612.jpg
+程思璐,助理工程师,微电子学院,"微电子学与固体电子学基础实验
+集成电路EDA",,silu.cheng@tju.edu.cn,,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkc/201704/t20170425_294162.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkc/201704/W020170531600543131875.jpg
+陈雄,副教授,微电子学院,,,shawn_chen@tju.edu.cn,"1. 微波毫米波电路器件非线性设计与先进测量方法。
+2. 大功率微波毫米波电路器件及其可靠性。
+3. 高速PCB/IC及封装的信号完整性与电磁兼容。",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkc/202108/t20210824_321043.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkc/202108/W020210824490700032854.jpg
+傅海鹏,副教授,微电子学院,"《电路分析基础》——本科生
+《射频集成电路》——研究生",硕士生导师,hpfu@tju.edu.cn,主要研究领域包括射频与微波通信集成电路、亚毫米波与太赫兹源、集成电路与系统的可靠性研究。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkf/201903/t20190312_311995.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkf/201903/W020190312503471523779.jpg
+冯枫,副教授,微电子学院,《Neural Networks for High-Speed/High-Frequency Circuit Design》-研究生,,ff@tju.edu.cn,电子设计自动化（EDA）算法、人工神经网络建模、深度学习、计算电磁学仿真与快速优化设计、多物理场仿真与优化设计、成品率优化设计,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkf/202011/t20201112_319099.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkf/202011/W020210408494624649837.jpg
+高静,副教授,微电子学院,本科教学：《模拟集成电路》，《微电子学与固体电子基础实验》，《当代晶体管物理模型》,硕士生导师,gaojing@tju.edu.cn,"1）CMOS图像传感器系统及芯片
+2）电源管理芯片研究",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkg/201704/t20170425_294164.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkg/201704/W020170425418738461677.jpg
+高志远,讲师,微电子学院,,,gaozhiyuan@tju.edu.cn,研究领域包括数模混合CMOS集成电路、光电传感器件，主要研究具有高速、仿生、智能等特点的CMOS成像芯片。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkg/202007/t20200720_317717.htm,
+胡明,教授,微电子学院,本科生课程：“微/纳系统集成传感器技术”（创新课程）、 “课程设计—薄膜电子技术”，硕士研究生：“功能薄膜与器件”（学位课）博士生课程：“薄膜电子学”（学位课）、“微纳传感器导论”（选修课）,博士生导师,huming@tju.edu.cn,功能薄膜器件与集成　  敏感材料与微纳传感器　  微/纳系统设计与技术,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkh/201704/t20170425_294169.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkh/201704/W020170425424598084713.jpg
+韩昌彩,副教授,微电子学院,本科生课程《信号与系统》,,cchan@tju.edu.cn,"1、无线协作网络通信：研究不同通信节点之间如何共享天线、功率等资源，实现多节点高效协作信息传输，获得协作分集增益与编码增益，提高无线网络的性能。
+
+2、绿色能量收集无线通信：在新一代无线通信中，研究节点的能量收集与合作使用，降低传统能源的消耗，提高电池供电网络的生命周期，扩展无线网络的应用，实现绿色通信。",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkh/201704/t20170425_294168.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkh/201704/W020170425422810026099.jpg
+罗宇,教授,微电子学院,"1. 高频电子线路 （本科课程）
+
+2. 高等天线理论 （研究生课程）",,yluo@tju.edu.cn,天线理论与技术,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/202108/t20210824_321041.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/202108/W020210824483328472331.jpg
+李玲霞,教授,微电子学院,"本科生课程：《电介质物理》；
+
+研究生课程：《电子信息材料与器件》；
+
+博士生课程：《现代微波材料与器件》
+
+天津大学本科生优秀指导教师
+
+天津大学优秀博士生指导教师",博士生导师,lilingxia66@163.com,"1. 电子信息功能材料与器件
+2. 微波毫米波介质材料与器件技术
+
+3. 电子薄膜集成器件技术
+4.  LTCC及微组装技术",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/202007/t20200720_317721.htm,
+李卓,副教授,微电子学院,电子线路基础、高级计算机网络、数据结构、C语言程序设计及应用、C++语言程序设计、计算机概述、密码编码学与网络安全、嵌入式操作系统。,硕士生导师,zli@tju.edu.cn,未来互联网架构、高性能路由器架构、命名数据网、物联网。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/202004/t20200426_316717.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/202004/W020200426573440847719.jpg
+刘开华,教授,微电子学院,电子线路基础，软件无线电，现代电子电路，无线传感器网络,,liukaihua@tju.edu.cn,射频识别理论与应用，数字信号处理理论与应用，数字电视系统技术,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/t20170425_294179.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/W020170425503724836291.jpg
+梁煜,副教授,微电子学院,数字逻辑电路、数字系统器件及设计技术,硕士生导师,liangyu@tju.edu.cn,数字信号处理VLSI，射频集成电路设计,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/t20170425_294178.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/W020170531611411429893.jpg
+梁继然,副教授,微电子学院,"薄膜电子技术（本科）
+单片机原理与应用（本科）
+敏感材料与微纳传感器（硕士）",博士/硕士生导师,liang_jiran@tju.edu.cn,"嵌入式传感器系统与电路设计；
+新型敏感材料与微纳传感器集成设计；
+表面等离子体共振传感。",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/t20170425_294177.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/W020170425492044463958.jpg
+李锵,教授,微电子学院,"本科生专业基础课程“信号与系统”（72学时）；
+硕士研究生双语课程“射频电路设计与现代信号分析”（32学时）；
+硕士研究生课程“无线通信与网络”（32学时）；
+博士研究生课程“自适应脑电信号处理”（40学时）。",博士生导师,liqiang@tju.edu.cn,智能信息处理（医学信号处理、医工结合信号处理、音乐信号处理、图像处理与应用、自适应与盲信号处理）、滤波器设计、数字系统与微系统设计 ,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/t20170425_294176.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/W020170425490630548102.jpg
+刘昱,教授,微电子学院,"(1) 信息论与编码（本科生）
+(2) 数字多媒体技术（硕士生）
+(3) 视频处理与通信（博士生）",博士生导师,liuyu@tju.edu.cn,"(1) 多媒体信号处理
+(2) 无信标人员导航及定位
+(3) 机器学习",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/t20170425_294182.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/W020170425500472099824.jpg
+刘强,教授,微电子学院,"本科：《FPGA原理与应用》，《SoC设计方法与实现》，《集成电路EDA》，《人工智能加速器》
+硕士：《Verilog HDL高级数字设计》",博士生导师,qiangliu@tju.edu.cn,"（1） 基于FPGA的定制化计算架构设计方法，及其在通信、信号处理、人工智能等领域的应用。
+（2） 集成电路硬件安全，包括集成电路IP保护、安全评估、故障注入攻击攻防关键技术研究等。",,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/202010/t20201013_318770.htm,
+兰馗博 ,工程师,微电子学院,主讲《生产实习》、《微电子基础实验》、《微电子工艺技术原理》等课程。,,kuibo.lan@tju.edu.cn ,微电子工艺、柔性电子、芯片的失效分析和实验室建议与管理。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkl/201704/t20170425_294171.htm,
+马凯学,教授,微电子学院,,博士生导师,,目前从事GaAs和硅基CMOS毫米波和亚毫米波集成电路等研发,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkm/201803/t20180319_304238.htm,
+孟凡易,教授,微电子学院,本科教学：高频电子线路 ,博士生导师,mengfanyi@tju.edu.cn,基于CMOS工艺的mm-Wave/THz集成电路与系统和异质集成电路与系统 ,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkm/201811/t20181109_310270.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkm/201811/W020181109560722446177.jpg
+马永涛,教授,微电子学院,"（1）数字逻辑电路（2）数字器件与数字系统（3）模拟电子技术（4）电子技术实验（5）无线传感器网络与RFID（6）电子线路课程设计（7）自动控制原理
+（8）智能信息感知与处理（9）智能感知及定位技术",博士生导师,mayongtao@tju.edu.cn,无源感知、生命信号监测、室内定位、物联网、人工智能、频谱认知及资源管理、体域网、天线设计、微波器件建模等,,；,
+聂凯明,副教授,微电子学院,半导体物理、集成电路版图设计技术、高等模拟集成电路设计,硕士生导师,nkaiming@tju.edu.cn,CMOS图像传感器芯片与成像系统设计和数模混合集成电路设计,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkn/202006/t20200609_317167.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkn/202006/W020200609477870268586.jpg
+秦玉香,副教授,微电子学院,MEMS技术、  微型计算机原理与接口技术、 半导体纳米电子器件、纳米结构材料与器件、微纳米加工技术,博士生导师、硕士生导师,qinyuxiang@tju.edu.cn,硅基/非硅基低维半导体纳米传感器件、微纳传感器阵列设计实现与系统集成技术、功能薄膜材料与器件、纳米结构冷阴极与场发射器件,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkq/201704/t20170425_294192.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkq/201704/W020170425533132803989.jpg
+秦国轩,教授,微电子学院,,, gqin@tju.edu.cn,柔性微波电子器件与电路的设计、建模与制造；单晶纳米薄膜技术；射频/微波电子器件及电路的研究；高速功率SiGe HBT器件与电路。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkq/201704/t20170425_294191.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkq/201704/W020170425531830495022.jpg
+史再峰,副教授,微电子学院,《超大规模集成电路设计专用语言》、《数字集成电路》、《SoC设计方法学》、《模拟集成电路》,博士生导师,shizaifeng@tju.edu.cn, 影像感知与智能计算、超大规模集成电路设计与验证、CT影像处理,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgks/201704/t20170425_294196.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgks/201704/W020170425539482591514.jpg
+沈建国,教授,微电子学院,医药数理统计方法（本科、博士），声波测量原理与技术（硕士）。可以上的课程：电磁场与电磁波、电路分析基础，场论,硕士生导师,,电磁场理论,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgks/201704/t20170425_294193.htm,
+宋航,讲师,微电子学院,,,songhang168@tju.edu.cn,微波目标检测成像，计算电磁学仿真，微波成像系统，生物电磁效应，自适应视频传输。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgks/201904/t20190422_313060.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgks/201904/W020190422393755578300.jpg
+滕建辅,教授,微电子学院,现代网络综合理论（硕士研究生学位课，双语）、信号与系统的结构和解释（双语）,,jfteng@tju.edu.cn,滤波器的理论和设计，全集成滤波器设计。有源网络综合。信号处理。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkt/201704/t20170425_294197.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkt/201704/W020170425541197941317.jpg
+王瀚,讲师,微电子学院,《电子线路基础》 ,硕士生导师,han_wang@tju.edu.cn,电路与系统，微电子学与固体电子学,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/202007/t20200702_317512.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/202007/W020200702500693596986.jpg
+王科平,教授,微电子学院,,博士生导师,kpwang@tju.edu.cn,宽带射频与毫米波集成电路、射频集成电路与微纳传感器协同设计、应用于物联网和生物医疗系统的超低功耗无线集成电路等,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/202003/t20200331_316589.htm,
+吴裕功,教授,微电子学院,材料物理学概论、固体物理和化学进展、电子元件计算机辅助设计专论,博士生导师,wuyugong@tju.edu.cn,电子功能材料和元器件、电子元器件计算机辅助设计、智能材料与智能结构,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/201704/t20170425_294201.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/201704/W020170425545772109423.jpg
+王秀宇,副教授,微电子学院,《固态电子学》(本)、《微电子可靠性原理》(本)、《微电子工艺原理》(本)、《集成电路工艺技术》 (硕),博士生导师、硕士生导师,wxy@tju.edu.cn,电子功能材料与器件(功能高分子复合材料与电子封装、电子封装材料与可靠性、半导体光/气敏特性器件与集成、UV光电探测器、CMOS图像传感器及系统集成等),,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/202103/t20210303_319684.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/202103/W020210303377382220939.jpg
+王勇强,副教授,微电子学院,　　,,wangyongqiang008@gmail.com,射频微波毫米波电路与系统,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/202104/t20210420_320275.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkw/202104/W020210420555825448299.png
+徐江涛,教授,微电子学院,《传感器系统设计》《混合信号设计技术》《微电子基础实验》《高等模拟集成电路》《MOS VLSI分析与设计》,博士生导师,xujiangtao@tju.edu.cn,图像传感器芯片及相机系统、数模混合集成电路设计、感算一体智能视觉芯片与系统,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkx/201912/t20191202_315574.htm,
+谢生,副教授,微电子学院,《量子力学与统计物理》《微电子技术工艺原理》《现代半导体器件物理》《微电子器件与电路模型》,硕士生导师,xie_sheng06@tju.edu.cn,模拟集成电路设计、光电器件与光电集成电路、 新型半导体器件与集成技术,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkx/201704/t20170425_294203.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkx/201704/W020170425549547027513.jpg
+肖夏,教授,微电子学院,半导体敏感器件、 超大规模集成电路互连系统、电子科学与技术导论、 固态电子器件 （双语） ,博士生导师,xiaxiao@tju.edu.cn,ULSI互连布线性能、目标成像算法、薄膜物性无损表征、生物电子信息检测、微波谐振腔设计、新能源利用等。 ,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkx/201704/t20170425_294202.htm,
+于仕辉,讲师,微电子学院,《研究方法论》,硕士生导师,ysh728@126.com,微带天线传感器设计、透明电极及可穿戴电子技术、能量俘获及储存技术,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgky/201704/t20170425_294213.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgky/201704/W020170425573661382136.jpg
+叶茂,副教授,微电子学院,,硕士生导师,mao_ye@tju.edu.cn,混合信号集成电路、光电传感器读出电路以及集成电路硬件安全,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgky/201704/t20170425_294206.htm,
+杨晋生,副教授,微电子学院,宽带接入技术，C++与数据结构基础，卫星通信系统,,jsyang@tju.edu.cn,无线通信理论与技术、物联网技术与应用,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgky/201704/t20170425_294205.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgky/201704/W020170425560337189660.jpg
+闫宁宁,讲师,微电子学院,,,ningning.yan@tju.edu.cn,天线理论与设计,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgky/202007/t20200720_317730.htm,
+张宁,工程师,微电子学院,微电子与固体电子基础实验、微电子工艺实习、专业综合实验,,ning.zhang@tju.edu.cn,电子信息功能材料与元器件、实验教学改革与实验室管理,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201905/t20190531_313737.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201905/W020190531376250899685.jpg
+张瑞峰,副教授,微电子学院,电磁场理论（电磁场与电磁波）、计算电磁学、微波器件与电路、近代微波测量技术,硕士生导师,zhangruifeng@tju.edu.cn,微纳光子学有关的计算电磁学、机器视觉、显微视觉以及嵌入式视觉,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201705/t20170531_295588.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201705/W020170531614338973567.jpg
+邹强,副教授,微电子学院,《纳米尺度加工测量分析技术》《物联网行业专用传感器系统集成技术》《物联网与工业4.0前沿技术》《现代微观分析技术》,博士生导师,zouqiang@tju.edu.cn,可穿戴设备（微纳米组装技术、能效器件、生化传感器件）、人工智能技术（基于物联网与大数据技术支撑的产业应用，主要针对医学、智慧城市、智能制造等领域）,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201704/t20170425_294212.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201704/W020171023342592051585.jpg
+赵毅强,教授,微电子学院,《微电子器件基础（晶体管原理）》《智能传感器集成系统》《高等半导体器件物理》《系统级芯片设计—SOC》,博士生导师,yq_zhao@tju.edu.cn,射频集成电路设计、混合信号集成电路设计；集成电路安全检测技术、安全存储芯片设计、抗攻击技术；光电检测与成像系统设计、传感器系统设计。,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201704/t20170425_294211.htm,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201704/W020170425571364376410.jpg
+张为,教授,微电子学院,《半导体物理》《微电子学与固体电子学综合实验》《VLSI电路与系统设计》,博士生导师,tjuzhangwei@tju.edu.cn,数字信号处理与VLSI实现、射频集成电路设计、图像分析与模式识别,,http://sme.tju.edu.cn/szduiwu/szgaikuang/szgkz/201704/t20170425_294208.htm,

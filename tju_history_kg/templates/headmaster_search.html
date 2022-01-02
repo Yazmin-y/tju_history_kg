@@ -1,0 +1,310 @@
+{% extends "navigate.html" %} {% block mainbody %}
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="/static/js/echarts.js"></script>
+
+</head>
+<title>历届掌校人总览</title>
+<div class="container">
+    <div class="row">
+    <!--head start-->
+    <div class="col-md-12">
+        <h3 class="page-header"><i class="fa fa-share-alt" aria-hidden="true"></i> 历届掌校人总览 </h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="\">主页</a></li>
+                <li><i class="fa fa-share-alt" aria-hidden="true"></i>历届掌校人总览</li>
+            </ol>
+    </div>
+<!--实体关系查询-->
+{% if entityRelation %}
+    <!-- Echart Dom对象（实体关系） -->
+    <div class = "col-md-12">
+        <div class="panel panel-default ">
+            <header class="panel-heading">
+                知识图谱 :
+            </header>
+            <div class = "panel-body ">
+                <div id="graph" style="width: 90%;height:600px;"></div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% if entityRelation %}
+<div class = "col-md-12">
+    <div class="panel panel-default">
+    <header class="panel-heading">
+        关系列表 :
+    </header>
+        <div class = "panel-body">
+            <table class = "table" data-paging =  "true" data-sorting="true"></table>
+        </div>
+    </div>
+</div>
+{% endif %}
+</div>
+</div>
+{% if entityRelation %}
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+        // 基于查询结果：初始化Data和Links列表，用于Echarts可视化输出
+        var ctx = [ {{ ctx|safe }} ] ;
+        //{entity2,rel}
+        var entityRelation = [ {{ entityRelation|safe }} ] ;
+
+        var data = [] ;
+        var links = [] ;
+
+        var id = 0 ;
+    for( var i = 0 ;i < entityRelation[0].length ; i++ ){
+        //获取node1
+        node1 = {} ;
+        node1['name'] = entityRelation[0][i]['source']['name'];
+        node1['category'] = entityRelation[0][i]['source']['type'];
+        node1['draggable'] = true;
+        node1['value'] = entityRelation[0][i]['source']['intro'];
+        node1['start_time'] = entityRelation[0][i]['source']['start_time'];
+        node1['end_time'] = entityRelation[0][i]['source']['end_time'];
+        node1['title'] = entityRelation[0][i]['source']['title'];
+        node1['birth_year'] = entityRelation[0][i]['source']['birth_year'];
+        node1['death_year'] = entityRelation[0][i]['source']['death_year'];
+        node1['image'] = entityRelation[0][i]['source']['image'];
+
+        var flag = 1 ;
+
+        relationTarget = id.toString() ;
+        for(var j = 0 ; j<data.length ;j++){
+        	if(data[j]['name'] == node1['name']){
+        		flag = 0 ;
+        		relationTarget = data[j]['id'] ;
+        		break ;
+        	}
+        }
+
+        node1['id'] = relationTarget ;
+        if(flag == 1){
+        	id++ ;
+        	data.push(node1) ;
+        }
+
+        //获取node2
+        node2 = {} ;
+        node2['name'] = entityRelation[0][i]['target']['name'];
+        node2['category'] = entityRelation[0][i]['target']['type'];
+        node2['draggable'] = true;
+        node2['start_time'] = entityRelation[0][i]['target']['start_time'];
+        node2['end_time'] = entityRelation[0][i]['target']['end_time'];
+        node2['location'] = entityRelation[0][i]['target']['location'];
+        flag = 1 ;
+        relationTarget = id.toString() ;
+        for(var j = 0 ; j<data.length ;j++){
+        	if(data[j]['name'] == node2['name']){
+        		flag = 0 ;
+        		relationTarget = data[j]['id'] ;
+        		break ;
+        	}
+        }
+        node2['id'] = relationTarget ;
+        if(flag == 1){
+        	id++ ;
+        	data.push(node2) ;
+        }
+
+        //获取relation
+        relation = {}
+        relation['source'] = node1['id'];
+        relation['target'] = node2['id'] ;
+        flag = 1;
+        for(var j = 0 ;j<links.length;j++){
+        	if(links[j]['source'] == relation['source'] && links[j]['target'] == relation['target']){
+        		links[j]['value'] = links[j]['value'] + ' & ' + entityRelation[0][i]['rel_type'] ;
+        		flag = 0 ;
+        		break ;
+        	}
+        }
+        if(flag == 1){
+        	relation['value'] = entityRelation[0][i]['rel_type'] ;
+        	relation['symbolSize'] = 10;
+        	links.push(relation) ;
+        }
+
+    }
+
+
+
+
+        //基于表格的展示
+        tableData = []
+        for (var i = 0 ; i < entityRelation[0].length; i++){
+            relationData = {} ;
+            relationData['entity1'] = entityRelation[0][i]['source']['name'] ;
+            relationData['time'] = entityRelation[0][i]['source']['start_time']+'-'+entityRelation[0][i]['source']['end_time'] ;
+            relationData['title'] = entityRelation[0][i]['source']['title'];
+            relationData['entity2'] =  entityRelation[0][i]['target']['name'];
+
+            tableData.push(relationData) ;
+        }
+
+        jQuery(function(){
+            $('.table').footable({
+            "columns": [{"name":"entity1",title:"掌校人"} ,
+                        {"name":"title",title:"职位"} ,
+                        {"name":"time",title:"任职时间"},
+                        {"name":"entity2",title:"学校"}],
+            "rows": tableData
+            });
+        });
+        //基于表格的展示--
+
+
+
+    // 基于准备好的数据：Data和Links，设置Echarts参数
+    var myChart = echarts.init(document.getElementById('graph'));
+    option = {
+        title: {
+            text: ''
+        },                //标题
+        tooltip: {
+            triggerOn: "click",
+            extraCssText: 'width:260px;white-space:pre-wrap',
+            formatter: function(params){
+                var res = params.data.name;
+                if(params.data.time){
+                    res +=  "<br /> 时间：" + params.data.time;
+                }
+                if(params.data.location){
+                    res +=  "<br /> 地点：" + params.data.location;
+                }
+                if(params.data.start_time){
+                    res +=  "<br /> 开始时间：" + params.data.start_time;
+                }
+                if(params.data.end_time){
+                    res +=  "<br /> 结束时间：" + params.data.end_time;
+                }
+                if(params.data.birth_year){
+                    res +=  "<br /> 生年：" + params.data.birth_year;
+                }
+                if(params.data.death_year){
+                    res +=  "<br /> 卒年：" + params.data.death_year;
+                }
+                if(params.data.intro){
+                    res +=  "<br /> 简介：" + params.data.value;
+                }
+                if(params.data.title){
+                    res +=  "<br /> 职称：" + params.data.title;
+                }
+                if(params.data.image){
+                    res += "<br /><img style='width:250px;' src='"+params.data.image+"'/>";
+                }
+                return res;
+            }
+        },                           //提示框配置
+        toolbox: {
+        // 显示工具箱
+            show: true,
+            feature: {
+                mark: {
+                    show: true
+                },
+                // 还原
+                restore: {
+                    show: true
+                },
+                // 保存为图片
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        label: {
+            normal: {
+                show: true,
+                textStyle: {
+                    fontSize: 12,
+                    color: "#6495ED",
+                },
+
+            }
+        },                          //节点上的标签
+        legend: {
+            x: "center",
+            show: false
+        },
+        series: [
+            {
+                type: 'graph',                //系列：
+                layout: 'force',
+                symbolSize: 70,
+                focusNodeAdjacency: true,
+                roam: true,
+                edgeSymbol: ['none', 'arrow'],
+                categories: [{
+                    name: ':headmaster',
+                    itemStyle: {
+                        normal: {
+                            color: "#FFC0CB",
+                        }
+                    }
+                }, {
+                    name: ':school',
+                    itemStyle: {
+                        normal: {
+                            color: "#D2B48C",
+                        }
+                    }
+                }],
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 12,
+                            color: '#000000',
+                        },
+                        formatter: function(params){
+                            var strs = params.name.split(''); //字符串数组
+                            var str = ''
+                            for(var i = 0, s; s = strs[i++];) { //遍历字符串数组
+                                str += s;
+                                if(!(i % 6)) str += '\n'; //按需要求余
+                            }
+                            return str;
+                        },
+                    }
+                },               //节点标签样式
+                force: {
+                    repulsion: 100,
+                    gravity: 0.01,
+                    edgeLength: 180
+                },
+                edgeSymbolSize: [4, 50],
+                edgeLabel: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 10
+                        },
+                        formatter: "{c}"
+                    }
+                },           //边标签样式
+                data: data,                 //节点
+                links: links,               //节点间的关系
+                lineStyle: {
+                    normal: {
+                        opacity: 0.9,
+                        width: 1.3,
+                        curveness: 0,
+                        color:"#262626"
+                    }
+                }            // 连接线的风格
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+{% endif %}
+
+{% endblock %}

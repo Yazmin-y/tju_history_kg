@@ -1,0 +1,430 @@
+{% extends "navigate.html" %} {% block mainbody %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="/static/js/echarts.js"></script>
+</head>
+<title>关系</title>
+<div class="container">
+    <div class="row">
+    <!--head start-->
+    <div class="col-md-12">
+        <h3 class="page-header"><i class="fa fa-link" aria-hidden="true"></i> 关系查询 </h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="\">主页</a></li>
+                <li><i class="fa fa-link" aria-hidden="true"></i>关系查询</li>
+            </ol>
+    </div>
+    
+    <div class = "col-md-12">
+    	<div class = "panel panel-default">
+			<header class="panel-heading">
+            查询条件：
+       		</header>
+       		<div class = "panel-body">
+
+			    <form  id ="searchRelationForm" class="form-inline" style="padding-left: 10% ; padding-right: 10%" method="get">
+			    	<div id = "entity1" class="form-group" style="padding: 2%">
+			        	<input type="text" id = "entity1_text" name = "entity1_text" class ="form-control" placeholder="实体名1" aria-describedby="basic-addon1">
+			 		</div>
+			 		<!--dropdown combobox start-->
+			        <div class="btn-group" style="padding: 2%" > <a class="btn btn-default dropdown-toggle btn-select form-control" data-toggle="dropdown" id="btnCountry">关系类型<span class="caret"></span></a>
+			            <ul class="dropdown-menu">
+			                <li><a href="#">涉及</a></li>
+                            <li><a href="#">前身</a></li>
+                            <li><a href="#">属于</a></li>
+                            <li><a href="#">担任校长</a></li>
+			                <li class="divider"></li>
+			                <li><a href="#"><span class="glyphicon glyphicon-star"></span>其他</a></li>
+			            </ul>
+			        </div>
+			        <!--dropdown combobox end-->
+			        <div id = "relation_name" class = "form-group hide" style="padding: 2%">
+			        	 <input type="text" id = "relation_name_input" name = "relation_name_text" class ="form-control" placeholder="输入关系名称" aria-describedby="basic-addon1">
+			        </div>
+			        <div id = "entity2" class = "form-group" style="padding: 2%">
+			        	 <input type="text" id = "entity2_text" name = "entity2_text" class ="form-control" placeholder="实体名2" aria-describedby="basic-addon1">
+			        </div>
+			        <div class="btn-group" style="padding: 2%">
+			            <button type="button" id="btnSearch" class="btn btn-primary" onclick = "document.getElementById('searchRelationForm').submit();">查询</button>
+			        </div>
+				</form>
+			</div>
+		</div>
+	</div>
+	{% if ctx %}
+	<div class = "col-md-12">
+		<div class = "panel panel-default">
+			<header class = "panel-heading">
+				查询结果：
+			</header>
+			<div class = "panel-body">
+				<div style="padding: 2%">
+					<h2>暂未找到相应的匹配</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+    {% if searchResult %}
+
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div class = "col-md-12">
+        <div class="panel panel-default ">
+	        <header class="panel-heading">
+	            关系图 :
+	        </header>
+            <div class = "panel-body ">
+                <div id="graph" style="width: 100%;height:600px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Footable -->
+    <div class = "col-md-12">
+	    <div class="panel panel-default">
+	    	<header class="panel-heading">
+	       	 关系列表 :
+	   		</header>
+	        <div class = "panel-body">
+	            <table class = "table" data-paging =  "true" data-sorting="true"></table>
+	        </div>
+	    </div>
+	</div>
+    {% endif %}
+
+</div>
+<script src="/static/js/jquery-1.8.3.min.js"></script>
+{% if searchResult %}
+<script type="text/javascript">
+	var searchResult = [{{searchResult|safe}}];
+	//用表格列出所有的关系
+
+    //echarts 数据
+    var data = [] ;
+    var links = [] ;
+    var id = 0 ;
+
+    for( var i = 0 ;i < searchResult[0].length ; i++ ){
+        //获取node1
+        node1 = {} ;
+        node1['name'] = entityRelation[0][i]['source']['name'];
+        node1['category'] = entityRelation[0][i]['source']['type'];
+        node1['draggable'] = false;
+        node1['value'] = entityRelation[0][i]['source']['intro'];
+        node1['image'] = entityRelation[0][i]['source']['image'];
+        node1['time'] = entityRelation[0][i]['source']['time'];
+        node1['title'] = entityRelation[0][i]['source']['title'];
+        node1['website'] = entityRelation[0][i]['source']['website'];
+        node1['start_time'] = entityRelation[0][i]['source']['start_time'];
+        node1['end_time'] = entityRelation[0][i]['source']['end_time'];
+        node1['location'] = entityRelation[0][i]['source']['location'];
+        node1['birth_year'] = entityRelation[0][i]['source']['birth_year'];
+        node1['death_year'] = entityRelation[0][i]['source']['death_year'];
+        node1['email'] = entityRelation[0][i]['source']['email'];
+        node1['direction'] = entityRelation[0][i]['source']['direction'];
+        var flag = 1 ;
+
+        relationTarget = id.toString() ;
+        for(var j = 0 ; j<data.length ;j++){
+        	if(data[j]['name'] == node1['name']){
+        		flag = 0 ;
+        		relationTarget = data[j]['id'] ;
+        		break ;
+        	}
+        }
+
+        node1['id'] = relationTarget ;
+        if(flag == 1){
+        	id++ ;
+        	data.push(node1) ;
+        }
+
+        //获取node2
+        node2 = {} ;
+        node2['name'] = entityRelation[0][i]['target']['name'];
+        node2['category'] = entityRelation[0][i]['target']['type'];
+        node2['draggable'] = false;
+        node2['value'] = entityRelation[0][i]['target']['intro'];
+        node2['image'] = entityRelation[0][i]['target']['image'];
+        node2['time'] = entityRelation[0][i]['target']['time'];
+        node2['title'] = entityRelation[0][i]['target']['title'];
+        node2['website'] = entityRelation[0][i]['target']['website'];
+        node2['start_time'] = entityRelation[0][i]['target']['start_time'];
+        node2['end_time'] = entityRelation[0][i]['target']['end_time'];
+        node2['location'] = entityRelation[0][i]['target']['location'];
+        node2['birth_year'] = entityRelation[0][i]['target']['birth_year'];
+        node2['death_year'] = entityRelation[0][i]['target']['death_year'];
+        node2['email'] = entityRelation[0][i]['target']['email'];
+        node2['direction'] = entityRelation[0][i]['target']['direction'];
+        flag = 1 ;
+        relationTarget = id.toString() ;
+        for(var j = 0 ; j<data.length ;j++){
+        	if(data[j]['name'] == node2['name']){
+        		flag = 0 ;
+        		relationTarget = data[j]['id'] ;
+        		break ;
+        	}
+        }
+        node2['id'] = relationTarget ;
+        if(flag == 1){
+        	id++ ;
+        	data.push(node2) ;
+        }
+
+        //获取relation
+        relation = {}
+        relation['source'] = node1['id'];
+        relation['target'] = node2['id'] ;
+        flag = 1;
+        for(var j = 0 ;j<links.length;j++){
+        	if(links[j]['source'] == relation['source'] && links[j]['target'] == relation['target']){
+        		links[j]['value'] = links[j]['value'] + ' & ' + searchResult[0][i]['rel_type'] ;
+        		flag = 0 ;
+        		break ;
+        	}
+        }
+        if(flag == 1){
+        	relation['value'] = searchResult[0][i]['rel_type'] ;
+        	relation['symbolSize'] = 10;
+        	links.push(relation) ;
+        }
+
+    }
+
+        //基于表格的展示
+        tableData = []
+        for (var i = 0 ; i < searchResult[0].length; i++){
+            relationData = {} ;
+            relationData['entity1'] = searchResult[0][i]['source']['name'] ;
+            relationData['relation'] = searchResult[0][i]['rel_type'] ;
+            relationData['entity2'] =  searchResult[0][i]['target']['name'];
+
+            tableData.push(relationData) ;
+        }
+
+        jQuery(function(){
+            $('.table').footable({
+            "columns": [{"name":"entity1",title:"Entity1"} ,
+                        {"name":"relation",title:"Relation"},
+                        {"name":"entity2",title:"Entity2"}],
+            "rows": tableData
+            });
+        });
+        //基于表格的展示--
+
+
+
+    // 基于准备好的数据：Data和Links，设置Echarts参数
+    var myChart = echarts.init(document.getElementById('graph'));
+    option = {
+        title: {
+            text: ''
+        },                //标题
+        tooltip: {
+            triggerOn: "click",
+            extraCssText: 'width:260px;white-space:pre-wrap',
+            formatter: function(params){
+                var res = params.data.name;
+                if(params.data.time){
+                    res +=  "<br /> 时间：" + params.data.time;
+                }
+                if(params.data.email){
+                    res +=  "<br /> 邮箱：" + params.data.email;
+                }
+                if(params.data.direction){
+                    res +=  "<br /> 研究方向：" + params.data.direction;
+                }
+                if(params.data.location){
+                    res +=  "<br /> 地点：" + params.data.location;
+                }
+                if(params.data.start_time){
+                    res +=  "<br /> 开始时间：" + params.data.start_time;
+                }
+                if(params.data.end_time){
+                    res +=  "<br /> 结束时间：" + params.data.end_time;
+                }
+                if(params.data.birth_year){
+                    res +=  "<br /> 生年：" + params.data.birth_year;
+                }
+                if(params.data.death_year){
+                    res +=  "<br /> 卒年：" + params.data.death_year;
+                }
+                if(params.data.intro){
+                    res +=  "<br /> 简介：" + params.data.value;
+                }
+                if(params.data.title){
+                    res +=  "<br /> 职称：" + params.data.title;
+                }
+                if(params.data.website){
+                    res +=  "<br /> 网址：" +"<a href='" + params.data.website + "'>" + params.data.name + "</a>";
+                }
+                if(params.data.image){
+                    res += "<br /><img style='width:250px;' src='"+params.data.image+"'/>";
+                }
+                return res;
+            }
+        },                           //提示框配置
+        toolbox: {
+        // 显示工具箱
+            show: true,
+            feature: {
+                mark: {
+                    show: true
+                },
+                // 还原
+                restore: {
+                    show: true
+                },
+                // 保存为图片
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        animation:false,
+        label: {
+            normal: {
+                show: true,
+                textStyle: {
+                    fontSize: 12,
+                    color: "#6495ED",
+                },
+
+            }
+        },                          //节点上的标签
+        legend: {
+            orient:"vertical",
+            align:"left",
+            left:"left",
+            data: [':event', ':school', ':headmaster', ':constitution', ':unit', ':majorInfo', ':teacherInfoCIC']
+        },
+        series: [
+            {
+                type: 'graph',                //系列：
+                layout: 'force',
+                symbolSize: 70,
+                focusNodeAdjacency: true,
+                roam: true,
+                edgeSymbol: ['none', 'arrow'],
+                categories: [{
+                    name: ':headmaster',
+                    itemStyle: {
+                        normal: {
+                            color: "#FFC0CB",
+                        }
+                    }
+                }, {
+                    name: ':teacherInfoCIC',
+                    itemStyle: {
+                        normal: {
+                            color: "#4169E1",
+                        }
+                    }
+                }, {
+                    name: ':school',
+                    itemStyle: {
+                        normal: {
+                            color: "#D2B48C",
+                        }
+                    }
+                }, {
+                    name: ':event',
+                    itemStyle: {
+                        normal: {
+                            color: "#008B8B",
+                        }
+                    }
+                }, {
+                    name: ':constitution',
+                    itemStyle: {
+                        normal: {
+                            color: "#CD5C5C",
+                        }
+                    }
+                }, {
+                    name: ':unit',
+                    itemStyle: {
+                        normal: {
+                            color: "#C0C0C0",
+                        }
+                    }
+                }, {
+                    name: ':majorInfo',
+                    itemStyle: {
+                        normal: {
+                            color: "#808000",
+                        }
+                    }
+                }],
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 12,
+                            color: '#000000',
+                        },
+                        formatter: function(params){
+                            var strs = params.name.split(''); //字符串数组
+                            var str = ''
+                            for(var i = 0, s; s = strs[i++];) { //遍历字符串数组
+                                str += s;
+                                if(!(i % 6)) str += '\n'; //按需要求余
+                            }
+                            return str;
+                        },
+                    }
+                },               //节点标签样式
+                force: {
+                    repulsion: 1000,
+                    gravity: 0.01,
+                    edgeLength: [50, 100],
+                    layoutAnimation: false,
+                },
+                edgeSymbolSize: [4, 50],
+                edgeLabel: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 10
+                        },
+                        formatter: "{c}"
+                    }
+                },           //边标签样式
+                data: data,                 //节点
+                links: links,               //节点间的关系
+                lineStyle: {
+                    normal: {
+                        opacity: 0.9,
+                        width: 1.3,
+                        curveness: 0,
+                        color:"#262626"
+                    }
+                }            // 连接线的风格
+            }
+        ]
+    };
+	myChart.setOption(option);
+
+</script>
+{% endif %}
+<script>
+	$(".dropdown-menu li a").click(function(){
+	   var selText = $(this).text();
+	   $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+	   if(selText.trim()!="Other"){
+	   	$("#relation_name_input").val(selText.trim()) ;
+	   }
+	   //combobox behavior
+	   if (selText.trim()=="Other") {
+	       $("#relation_name").removeClass("hide");
+	   }
+	   else{
+	   	   $("#relation_name").addClass("hide");
+	   }
+	  
+	});
+</script>
+</div>
+{% endblock %}
